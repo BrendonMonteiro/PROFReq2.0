@@ -1298,7 +1298,7 @@ function gatherFormData() {
             if (bbcodeMessage) {
               setTimeout(function () {
                 $.post("/post", {
-                  t: 1,
+                  t: 32243,
                   message: bbcodeMessage,
                   mode: "reply",
                   post: 1,
@@ -1308,7 +1308,7 @@ function gatherFormData() {
                       "Postado com sucesso. Você será redirecionado para o tópico..."
                     );
                     location.href =
-                      "http://" + location.host + "/t1-?view=newest";
+                      "http://" + location.host + "/t32243-?view=newest";
                   })
                   .fail(function () {
                     alert("Houve um erro! Tente novamente!");
