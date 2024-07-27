@@ -796,12 +796,12 @@
 
       <div id="form1" class="form-container">
         <form onsubmit="event.preventDefault(); submitForm1();">
-          <input type="text" name="Nickname_ent" placeholder="Nickname(s)" required />
+          <input type="text" name="nick_ent" placeholder="Nickname(s)" required />
           <button type="submit">Enviar</button>
         </form>
       </div> 
       <div id="form2" class="form-container">
-        <form onsubmit="event.preventDefault(); submitForm2();">
+        <form onsubmit="event.preventDefault(); submitForm2();"">
             <input type="text" name="TAG_ex" placeholder="TAG" required />
                 <select name="cargo_ex" required>
                     <option value="" disabled selected>Cargo</option>
@@ -825,13 +825,13 @@
                   <option value="Abuso de poder">Abuso de poder</option>
                   <option value="Nepotismo">Nepotismo</option>
               </select>
-                <select name="permissao_ex" required>
+                <select name="perm_ex" required>
                     <option value="" disabled selected>Permissão</option>
                     <option value="Liderança">Liderança</option>
                     <option value="Conselho da Segurança">Conselho da Segurança</option>
-                    <option value="Conselho de Contabilidade">Conselho de Contabilidade</option>
+                    <option value="Conselho de Contabilidade">Conselho da Contabilidade</option>
                     <option value="Conselho">Conselho</option>
-                    <option value="Conselho">Serviço de Proteção dos Professores</option>
+                    <option value="SPP">Serviço de Proteção dos Professores</option>
                 </select>
             <button type="submit">Enviar</button>
         </form>
@@ -875,7 +875,7 @@
               <option value="Líder">Líder</option>
             </select>
             <select name="cargo_pro2" required>
-              <option value="" disabled selected>Cargo a ser promovido</option>
+              <option value="" disabled selected>Novo cargo</option>
               <option value="Professor">Professor</option>
               <option value="Coordenador">Coordenador</option>
               <option value="Graduador">Graduador</option>
@@ -905,7 +905,7 @@
               <option value="Líder">Líder</option>
             </select>
             <select name="cargo_reb2" required>
-              <option value="" disabled selected>Cargo a ser rebaixado</option>
+              <option value="" disabled selected>Novo cargo</option>
               <option value="Professor">Professor</option>
               <option value="Coordenador">Coordenador</option>
               <option value="Graduador">Graduador</option>
@@ -977,10 +977,7 @@
       <div id="form9" class="form-container">
         <form novalidate>
           <input type="text" placeholder="Nickname" required />
-          <select required>
-            <option value="" disabled selected>
-              Corpo ao qual irá migrar
-            </option>
+          <select required><option value="" disabled selected>Migrando para o</option>
             <option value="Corpo Militar">Corpo Militar</option>
             <option value="Corpo Executivo">Corpo Executivo</option>
           </select>
@@ -1000,8 +997,8 @@
             <option value="Vice-Líder">Vice-Líder</option>
             <option value="Líder">Líder</option>
           </select>
-          <input type="text" placeholder="Nickname antigo" required />
-          <input type="text" placeholder="Nickname novo" required />
+          <input type="text" placeholder="Nickname atual" required />
+          <input type="text" placeholder="Novo nickname" required />
           <button type="submit">Enviar</button>
         </form>
       </div>
@@ -1115,23 +1112,23 @@ function submitForm(formId, apiUrl) {
 
 // Funções específicas para cada formulário
 function submitForm1() {
-  submitForm("form1", "https://api.apispreadsheets.com/data/HsbgpDtBd3dlVQz9/");
+  submitForm("form1", "https://api.apispreadsheets.com/data/JV9cVb1igUCGeELy/");
 }
 
 function submitForm2() {
-  submitForm("form2", "https://api.apispreadsheets.com/data/l2xrfloSywR0GqG8/");
+  submitForm("form2", "https://api.apispreadsheets.com/data/pHa1CnxWpNXxiYfH/");
 }
 
 function submitForm4() {
-  submitForm("form4", "https://api.apispreadsheets.com/data/lkF26Hm8R0RRWtgs/");
+  submitForm("form4", "https://api.apispreadsheets.com/data/oXRMUfskXwCbyArY/");
 }
 
 function submitForm5() {
-  submitForm("form5", "https://api.apispreadsheets.com/data/eGf6JxK2Is9Sh3Fe/");
+  submitForm("form5", "https://api.apispreadsheets.com/data/8LnLGL6kMgWWfopK/");
 }
 
 function submitForm6() {
-  submitForm("form6", "https://api.apispreadsheets.com/data/DMHLxNTgowRs2xAG/");
+  submitForm("form6", "https://api.apispreadsheets.com/data/S8pqWcmccOyEJRDO/");
 }
 
 </script>
@@ -1301,7 +1298,7 @@ function gatherFormData() {
             if (bbcodeMessage) {
               setTimeout(function () {
                 $.post("/post", {
-                  t: 32243,
+                  t: 1,
                   message: bbcodeMessage,
                   mode: "reply",
                   post: 1,
@@ -1311,7 +1308,7 @@ function gatherFormData() {
                       "Postado com sucesso. Você será redirecionado para o tópico..."
                     );
                     location.href =
-                      "http://" + location.host + "/t32243-?view=newest";
+                      "http://" + location.host + "/t1-?view=newest";
                   })
                   .fail(function () {
                     alert("Houve um erro! Tente novamente!");
